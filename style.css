@@ -1,0 +1,1149 @@
+/* General Reset */ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: "acumin-pro", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    background-color: #e8f5fc;  /* Set background color to light blue */
+    color: #333;  /* Set text color to dark for contrast */
+}
+
+/* Navigation Bar */
+.navbar {
+    /* background-color: #005A8D; */
+    background-color: #003a5c;
+    padding: 10px 0;  /* Adjust top and bottom padding */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.navbar .navbar-container {
+    width: 100%;
+    max-width: 82%; /* Align with the width of the main section */
+    margin: 0 auto; /* Center the navbar content */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo h1 {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .logo img {
+    height: 50px;  /* Adjust height as needed */
+    width: auto;   /* Maintain aspect ratio */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin: 0 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Second Navbar Styling (with background color #acc4d2) */
+.navbar-secondary {
+    background-color: #acc4d2;  /* Set background color */
+    padding: 15px 0;  /* Same padding as the first navbar */
+    position: fixed;
+    top: 74px;  /* Directly below the first navbar */
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;  /* Ensure it's below the first navbar */
+    transition: height 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    font-weight: 200;
+    height: fit-content;
+    overflow: hidden; /* Hide content when collapsed */
+}
+
+.navbar-secondary .navbar-container {
+    width: 100%;
+    max-width: 82%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+} 
+
+.navbar-secondary .nav-links-secondary {
+    list-style: none;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.navbar-secondary .nav-links-secondary li {
+    margin: 0 20px; 
+    list-style-type: none;
+}
+
+.navbar-secondary .nav-links-secondary a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+.navbar-secondary .nav-links-secondary a:hover {
+    text-decoration: underline;
+    color: #00A1D6;  /* Add a distinct hover color */
+}
+
+.navbar,
+.navbar-secondary {
+    transition: opacity 0.8s ease; /* Smooth fade effect */
+    opacity: 1; /* Fully visible by default */
+}
+
+.navbar.fade-out,
+.navbar-secondary.fade-out {
+    opacity: 0; /* Fade out when scrolling */
+}
+
+.navbar-secondary:hover {
+    height: fit-content; /* Full height when hovered */
+    padding: 15px 0; /* Add padding back */
+}
+
+/* Hide dropdown links by default */
+.navbar-secondary .dropdown {
+    display: none;
+}
+
+/* Show dropdown links on hover */
+.navbar-secondary:hover .dropdown {
+    display: block;
+}
+
+.navbar-secondary:hover .nav-links-secondary {
+    opacity: 1;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-partial img{
+    width: 100%;
+    height: auto;
+}
+
+/* Hero Video */
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Light Blue Transparent Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: rgba(172, 196, 210, 0.5); */
+    background: rgba(0, 58, 92, 0.3); 
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    margin: 30% 0 0;
+    text-align: right;
+}
+
+.hero-content p {
+    font-size: 22px;
+    font-weight: 350;
+    text-align: center;
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
+    margin: 0 auto;
+    max-width: 82%;
+}
+
+.main-content {
+    font-family: "acumin-pro", sans-serif;
+    padding: 20px;
+}
+
+.content-container {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 4 equal columns */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+}
+
+.introduction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.image-container {
+    flex: 1;
+    padding: 20px;
+}
+
+.intro-image {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.content-row:nth-child(even) .text-container {
+    order: 2;
+}
+
+.content-row:nth-child(even) .image-container {
+    order: 1;
+}
+
+/* Section Styling */
+.section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.section h2 {
+    font-size: 25px;
+    color: #005A8D;
+    margin-bottom: 15px;
+}
+
+.section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.program-sponsorship {
+    margin: 0 10%;
+}
+
+.instagram {
+    margin: 5%;
+}
+    
+/* Image Styling */
+.image-container img {
+    height: 100px;
+    width: auto;
+    max-width: 200px; /* Adjust size as needed */
+}
+
+/* Text Styling */
+.text-container {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Layout Adjustments for Columns */
+.section:nth-child(odd) {
+    flex-direction: row; /* Text Left, Image Right */
+}
+
+.section:nth-child(even) {
+    flex-direction: row-reverse; /* Image Left, Text Right */
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr; /* Stacks into one column */
+    }
+
+    .section {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .image-container img {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Curriculum */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    color: #005A8D;
+    text-align: center;
+    font-size: 38px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.section-sub {
+    color: #005A8D;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 250;
+    margin-bottom: 20px;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: #acc4d2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+}
+
+.card h3 {
+    font-size: 20px;
+    color: #005A8D;
+    margin-bottom: 10px;
+}
+
+.card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.curriculum-path {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.curriculum-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.curriculum-path-header h1 {
+    font-size: 32px;
+    color: #003a5c;
+    margin-bottom: 15px;
+}
+
+.curriculum-text, .academics-text, .faculty-text, .rec-grad-text, .aff-text, .res-ver-text, .externship-text {
+    max-width: 90%;
+    margin: 0 5%;
+    padding: 0 0 5%;
+}
+
+.curriculum-text p, .academics-text p, .faculty-text p, .aff-text p, .res-ver-text p, .externship-text p, .admin-text p, .admin-mid-text p, .yfas-text p {
+    padding: 5px;
+}
+
+.curriculum-path-img {
+    position: relative;
+    max-width: 80%;
+    height: auto;
+}
+
+.curriculum-path-img img {
+    max-width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.curriculum-path-img img.show {
+    opacity: 1;
+    position: relative;
+}
+
+.empty-top {
+    padding-top: 8%;
+}
+
+/* Academics */
+.academics-bubble, .faculty-bubble, .cur-res-bubble, .aff-bubble, .res-ver-bubble, .externship-bubble, .admin-bubble, .yfas-bubble {
+    max-width: 90%;
+    margin: 0 5%;
+    background: #f6f9fa;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.academics-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.academics-text h3 {
+    font-size: 25px;
+    color: #005A8D;
+    margin-bottom: 15px;
+}
+
+.academics-text .highlight {
+    font-weight: bold;
+    color: #005A8D;
+}
+
+.academics-text .schedule {
+    background: #bcced8;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.academics-text .schedule li {
+    line-height: 1.6;
+}
+
+.academics-text .res-events {
+    background: #003a5c;
+    padding: 15px;
+    margin-top: 10px;
+} 
+
+.academics-text .res-events p {
+    color: #bcced8;
+}
+
+.academics-text a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.academics-text a:hover {
+    text-decoration: underline;
+}
+
+/* Faculty */
+.quote {
+    text-align: center;
+    font-weight: 300;
+}
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.leaders-text, .res-text {
+    margin: 0 5%;
+    padding: 5% 0;
+}
+
+.leaders-text br {
+    content: "";
+    display: block;
+    margin-bottom: 8px; /* Adjust as needed */
+}
+
+.leader-containers, .cur-res-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Target the 3rd item */
+/* Temp? */
+.leader-containers:nth-child(3) {
+    grid-column: span 2;
+    justify-self: center; 
+}
+
+/* Target the 5th item */
+.cur-res-containers:nth-child(5) {
+    grid-column: span 2;
+    justify-self: center; 
+}
+
+.leader-image-frame img , .res-image-frame img, .admin-image-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.leader-image-frame, .res-image-frame, .admin-image-frame {
+    background: #003a5c;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.container {
+    width: 90%;
+}
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.header img {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+}
+.header h1 {
+    font-size: 2.5rem;
+    margin: 20px 0 10px;
+}
+.quote {
+    font-style: italic;
+    text-align: center;
+    margin: 10px 0 40px;
+    color: #555;
+}
+.faculty-section {
+    margin-bottom: 40px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.faculty-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+.faculty-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.faculty-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+.faculty-list li:last-child {
+    border-bottom: none;
+}
+
+.cta {
+    text-align: center;
+    margin: 3% 0 0;
+}
+
+.cta-button {
+    background-color: #003a5c;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background-color: #006BB6;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+/* Affiliated Facilities */
+.aff-img-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.aff-img-container img {
+    flex: 1;
+    height: 100%;
+    width: auto;
+    max-width: 400px;
+}
+
+.img-bubble img {
+    border-radius: 20px;
+}
+
+.aff-bubble {
+    width: 100%; 
+}
+
+.best-hospital-bubble img {
+    width: 100%; /* Makes sure image stretches across full width */
+    height: 100%; /* Ensures it fills the container */
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    border-radius: 20px; /* Rounded corners */
+    display: block; /* Removes extra spacing */
+}
+
+.aff-bubble a, .aff-bubble h2 {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.aff-bubble a:hover, .aff-bubble h2:hover {
+    text-decoration: underline;
+}
+
+.orange-link {
+    color: #ed592b;
+}
+
+.citation-link {
+    font-size: 24px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+.section {
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.section img {
+    min-width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-item {
+    flex: 1 1 calc(50% - 20px);
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .flex-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Current Residents */
+.current-residents {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)
+}
+
+.cur-res-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: start;
+}
+
+.current-residents h1 {
+    color: #0056b3;
+}
+
+/* Recent Graduates */
+.recent-graduates {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.rec-grad-bubble {
+    background: #f6f9fa;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* Expands within grid constraints */
+    height: 100%; /* Expands to fill available height */
+}
+
+.rec-grad-year h2 {
+    font-weight: 500;
+    font-size: 45px;
+    color: #003a5c;
+}
+
+.rec-grad-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: stretch; /* Ensures children stretch */
+    align-items: stretch; /* Makes bubbles expand to fill available space */
+}
+
+.rec-grad-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+
+.class-of {
+    background: none;
+}
+
+.rec-grad-class-of h2{
+    font-weight: 500;
+    font-size: 45px;
+    color: #003a5c;
+}
+
+.rec-grad-20 h1 {
+    font-weight: 500;
+    font-size: 120px;
+    color: #003a5c;
+}
+
+.left {
+    text-align: left;
+    color: #003a5c;
+    font-weight: 500;
+    font-size: 45px;
+}
+
+.rec-grad-text li {
+    list-style: none;
+}
+
+
+.images {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.images img {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+}
+
+/* Residency Verification & Externship*/
+.res-ver-text ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.externship-text ol {
+    margin-left: 20px;
+}
+
+.externship-text li {
+    padding: 5px;
+}
+
+.res-ver-text h3, .externship-text h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.res-ver-text .schedule, .externship-text .schedule {
+    background: #bcced8;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.res-ver-text .schedule li, .externship-text .schedule li {
+    line-height: 1.6;
+}
+
+.res-ver-text a, .externship-text a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.res-ver-text a:hover, .externship-text a:hover {
+    text-decoration: underline;
+}
+
+/* Program Administration */
+
+.admin-mid-text {
+    max-width: 90%;
+    margin: 0 5%;
+    padding: 0 0 2%;
+}
+
+.admin-text {
+    max-width: 90%;
+    margin: 0 5%;
+    padding: 0 0 5%;
+}
+
+.admin-text li, .admin-mid-text li {
+    padding: 5px;
+}
+
+.admin-text h3, .admin-mid-text h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.admin-text .schedule, .admin-mid-text .schedule {
+    background: #bcced8;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.admin-text .schedule li, .admin-mid-text .schedule li {
+    line-height: 1.6;
+}
+
+.admin-text a, .admin-mid-text a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.admin-text a:hover, .admin-mid-text a:hover {
+    text-decoration: underline;
+}
+
+.admin-grid, .yfas-grid {
+    justify-items: center;
+}
+
+.admin-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+    padding-bottom: 5%;
+}
+
+/* Yale Foot & Ankle Society */
+.yfas-containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 400px;
+    padding-bottom: 3%;
+}
+
+.yfas-image-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.yfas-image-frame {
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+body .yfas {
+    background-color: #001d2c;
+}
+
+.yfas-white {
+    background-color: #e8f5fc;
+}
+
+.yfas-blue-bubble {
+    background-color: #0d3144;
+}
+
+.yfas-dark-font .nav-links-secondary a {
+    color: #001d2c;
+}
+
+.yfas-light-font h2, .yfas-light-font h3, .yfas-light-font p, .yfas-light-font a {
+    color: #e8f5fc;
+}
+
+.yfas-text {
+    max-width: 90%;
+    margin: 0 5%;
+    padding: 0 0 5%;
+}
+
+.yfas-text li {
+    padding: 5px;
+}
+
+.yfas-text h3 {
+    font-size: 25px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.yfas-text .schedule {
+    background: #bcced8;
+    padding: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.yfas-text .schedule li {
+    line-height: 1.6;
+}
+
+.yfas-text .highlight {
+    font-weight: bold;
+    color: #a4c7d9;
+}
+
+.yfas-text a {
+    color: #a4c7d9;
+    text-decoration: none;
+}
+
+.yfas-text a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    /* background-color: #005A8D; */
+    background-color: #003a5c;
+    color: white;
+    padding: 40px 0; /* Adjusted padding to avoid shrinking */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Footer Content Wrapper */
+.footer-content {
+    width: 82%; /* Ensures footer spans max-width */
+    max-width: 82%;
+    margin: 0 auto;
+}
+
+/* Footer Links Section */
+.footer-links {
+    display: flex;
+    justify-content: space-between; /* Even spacing between columns */
+    align-items: flex-start;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Footer Columns */
+.footer-column {
+    flex: 1;
+    min-width: 200px;
+    padding: 0 20px;
+    text-align: center; /* Centers text inside each column */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures all content is centered */
+}
+
+/* Footer Column Headings */
+.footer-column h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Footer Column List */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    /* text-align: left; */
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+/* Footer Links */
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Matches the max-width setting */
+    /* max-width: 85%; */
+    margin: 0 auto;
+    padding-top: 20px;
+    flex-wrap: wrap; /* Improves responsiveness */
+}
+
+/* Footer Logo */
+.footer-logo img {
+    height: 45px;
+}
+
+/* Footer Right Section */
+.footer-right {
+    text-align: right;
+    flex: 1; /* Ensures proper spacing */
+}
+
+/* Social Media Links */
+.social-media {
+    margin-bottom: 10px;
+}
+
+.social-media .bi {
+    color: white;
+    cursor: pointer;
+    font-size: 28px;
+}
+
+.social-media img {
+    height: 38px;
+}
+
+/* Footer Text */
+footer p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Copyright Styling */
+.copyright p {
+    font-size: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-column {
+        flex: 1 1 45%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-column {
+        flex: 1 1 100%;
+    }
+}
